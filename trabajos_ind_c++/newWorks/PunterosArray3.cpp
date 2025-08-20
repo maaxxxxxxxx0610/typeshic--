@@ -11,7 +11,7 @@ void Pedir () {
    elemento = new  int [n]; 
 
    for (int i = 0; i < n; i++) {
-    cout<<"Dime los numeros: "<<i;     cin>>*(elemento + i); 
+    cout<<"Dime los numeros: "<<"["<<i<<"]";     cin>>*(elemento + i); 
    }
 }
 
@@ -30,7 +30,7 @@ void orden (int* elemento, int n) {
 void mostrar (int *punt, int n) { 
     cout<<"Mostrando arreglo... "<<endl; 
     for (int i = 0; i < n; i++) {
-        cout<<*(punt + i); 
+        cout<<*(punt + i)<<" "; 
     }
 
 }
