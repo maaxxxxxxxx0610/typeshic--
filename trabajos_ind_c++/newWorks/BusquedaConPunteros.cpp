@@ -5,7 +5,7 @@ using namespace std;
 int n, *puntero; 
 
 void pedir () {
-   cout<<"Dime el tamaño del arreglo: "; 
+   cout<<"Dime el tamanio del arreglo: "; 
    cin>>n; 
 
    puntero = new int [n]; 
@@ -48,9 +48,9 @@ void mostrar (int *punt, int n) {
 
 int main() {
     int elemento; 
+    pedir(); 
     cout<<"Dime un elemento a buscae: "; 
     cin>>elemento; 
-    pedir(); 
     Busqueda(puntero, n, elemento); 
     mostrar(puntero, n ); 
     delete [] puntero; 
