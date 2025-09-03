@@ -52,6 +52,44 @@ do {
 } while ((rpt=='S')||rpt=='s');
 
 }
+
+void agregarContacto () {
+    ofstream archivo; 
+    string archivoExistente; 
+
+    archivo.open("AgendaTelefonica", ios::app); 
+
+    if (archivo.fail()) {
+        cout<<"Ese pedo no existe :/"; 
+        exit(1); 
+    }
+string nombre, apellido, telefono; 
+char rpt; 
+    do {
+        fflush(stdin); 
+        cout<<"Dime el nombre, apellido, num de telefono plssss"<<endl;
+
+getline(cin, nombre); 
+archivo<<"Nombre: "<<nombre<<endl; 
+getline(cin, apellido); 
+archivo<<"Apellido: "<<apellido<<endl; 
+getline(cin, telefono); 
+archivo<<"Telefono: "<<telefono<<endl; 
+
+archivo<<"----------------------------"<<endl; 
+
+if(telefono.size()<10) {
+    archivo<<"Te chingaron te dieron un num fake lmao: "<<telefono; 
+}
+
+cout<<"Desea agregar otro contacto?? (S/N) "<<endl; 
+cin>>rpt; 
+
+
+    } while (rpt == 's'||rpt == 'S' ); 
+archivo.close(); 
+}
+
 void menu(){
 
     int opc; 
@@ -61,7 +99,7 @@ void menu(){
         cout<<"1. Crear Nuevo contacto (nombre, apellido, telefono)"<<endl; 
         cout<<"2. Agregar más contactos (nombre, apellido, telefono)"<<endl; 
         cout<<"3. Visualizar contactos existentes"<<endl; 
-        cout<<"4. Salir.."<<endl; 
+        cout<<"4. Salir.."<<endl;   
         cin>>opc; 
         switch (opc)
         {
@@ -69,10 +107,11 @@ void menu(){
         crearContacto(); 
             break; 
         case 2: 
-
-        
-        default:
-            break;
+        agregarContacto();
+          break;  
+        case 3: 
+        cout<<"Pos ve tu agenda pendejo duhh, sal del programa"; 
+        break; 
         }
     } while (opc != 4); 
 }
