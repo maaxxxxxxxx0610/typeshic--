@@ -67,8 +67,9 @@ void Ordenamiento::mezcla(int a[], int inicio, int medio, int fin) {
   int *aux; 
   int i, k,z; 
   aux = new int [fin-inicio+1]; 
-  i = z = inicio; 
-  k = medio +1; 
+  i  = inicio; 
+  k = medio +1;
+  z = 0;  
   while (i <= medio && k <=fin) {
     if (a[i]< a[k]) {
         aux[z++] = a[i++]; 
@@ -77,15 +78,14 @@ void Ordenamiento::mezcla(int a[], int inicio, int medio, int fin) {
     }
   }
 
-  while (i <= medio) {
-    aux[z++] = a[i++]; 
+  while (i <= medio) aux[z++] = a[i++]; 
+
+  while (k <= fin) aux[z++] = a[k++]; 
+  
+  for (int x = 0; x < z; x++) {
+    a[inicio+x] = aux[x]; 
   }
-  while (k <= fin) {
-    aux[z++] = a[k++]; 
-  }
-  for (int x = inicio; x <= fin; x++) {
-    a[inicio+x] = aux[i]; 
-  }
+
   delete[] aux; 
 
 }
