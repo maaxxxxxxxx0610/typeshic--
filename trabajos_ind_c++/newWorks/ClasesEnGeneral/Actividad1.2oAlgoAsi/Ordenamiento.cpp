@@ -10,7 +10,7 @@ void Ordenamiento::OrdenBurbuja(int a[], int n) {
         for (j = 0; j < n-i-1; j++) {
             if (a[j]> a[j+1] ) {
                 aux = a[j]; 
-                a[j] = a[j+1]; 
+                a[j] = a[j+1];   
                 a[j+1] = aux; 
             }
         }
@@ -43,7 +43,7 @@ void Ordenamiento::OrdenInsercion(int a[], int n) {
            a[pos] = a[pos-1]; 
            pos--; 
         }
-        a[pos] = aux; 
+        a[pos] = aux;  
     }
 }
 
