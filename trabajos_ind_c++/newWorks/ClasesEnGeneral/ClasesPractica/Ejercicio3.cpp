@@ -37,6 +37,8 @@ class Empleado : public Persona {
 
 
 
+
+
 Persona::Persona(){
 
 }

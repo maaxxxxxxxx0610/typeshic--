@@ -22,7 +22,6 @@ ord.mergeSort(arr,n);
 cout<<"Arreglo ordenado con los metodos disponibles: "; 
 for (int i = 0; i< n; i++) {
     cout<<arr[i]<<" "; 
-
 }
 
 return 0; 
